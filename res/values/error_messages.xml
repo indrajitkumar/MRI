@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="err_nw">Error ! Internet Connection Not Available.</string>
+    <string name="err_invalid_login">Error ! Invalid Login Details.</string>
+    <string name="err_data">Error ! Data not received from server.</string>
+    <string name="err_default">Error ! Unknown Error.</string>
+	<string name="err_conn_timeout">Error ! Connection Timeout, Please Again.</string>
+	
+</resources>

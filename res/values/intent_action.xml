@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- MRDashboardActivity -->
+    <string name="home_action">com.brainbox.shopclues.milkrun.action.HOME</string>
+    <!-- MRDashboardActivity -->
+    <string name="dashboard_action">com.brainbox.milkrun.shopclues.DASHBOARD_ACTION</string>
+    <!-- MerchantItemActivity -->
+    <string name="merchant_item_action">com.brainbox.milkrun.shopclues.action.MERCHANT_ITEM</string>
+    <!-- MerchantViewActivity -->
+    <string name="merchant_action">com.brainbox.milkrun.shopclues.ACTION_MERCHANT</string>
+    <!-- <string name="order_item_action">com.brainbox.milkrun.shopclues.action.ORDER_ITEM</string> not in use-->
+    <!-- OrderListActivity -->
+    <string name="order_action">com.brainbox.milkrun.shopclues.action.ORDER_VIEW</string>
+    <!-- <string name="intent_action_login">com.brainbox.milkrun.shopclues.action.LOGIN</string> not in use-->
+    <!-- WarningsActivity -->
+    <string name="intent_action_warning">com.brainbox.milkrun.shopclues.WARNING_ACTION</string>
+    <!-- LoginActivity -->
+    <string name="login_action">com.brainbox.milkrun.shopclues.LOGIN_ACTION</string>
+    <!-- MRTabViewActivity -->
+    <string name="action_tab">com.brainbox.milkrun.shopclues.action.TAB</string>
+    <!-- MerchantTabViewActivity -->
+    <string name="action_merchant">com.brainbox.milkrun.shopclues.action.MERCHANT_TAB</string>
+    
+    
+    <string name="message_action">com.brainbox.core.action.MESSAGE</string> <!-- RECEIVER -->
+    <string name="action_refresh">com.brainbox.core.action.REFRESH</string> <!-- RECEIVER -->
+
+</resources>

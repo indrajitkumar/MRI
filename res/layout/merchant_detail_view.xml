@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alert_inset"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="#fff" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/merchant_name"
+                style="@style/DetailTextImp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="left" />
+
+            <TextView
+                android:id="@+id/merchant_phone"
+                style="@style/list_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@drawable/bg_phone"
+                android:clickable="true"
+                android:drawableLeft="@android:drawable/sym_action_call"
+                android:gravity="center_vertical"
+                android:padding="0dp" >
+            </TextView>
+
+            <View
+                style="@style/seperator"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/merchant_address"
+                style="@style/DetailText"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="left" />
+
+            <View style="@style/seperator" />
+
+            <TextView
+                style="@style/DetailTextImp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="left"
+                android:text="Reaching In" />
+
+            <Spinner
+                android:id="@+id/time_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:entries="@array/notification_times"
+                android:prompt="@string/notification_time" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/ok_button"
+            style="@style/ButtonSmall"
+            android:layout_width="130dp"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/ButtonSmall"
+            android:layout_width="130dp"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/cancel" />
+    </RelativeLayout>
+
+</LinearLayout>

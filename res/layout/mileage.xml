@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/upd_qty_layout"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alert_inset"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/input"
+        style="@style/editText"
+        android:ems="4"
+        android:hint="Enter Mileage"
+        android:inputType="number"
+        android:maxEms="6"
+        android:selectAllOnFocus="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/goButton"
+        style="@style/ButtonSmall"
+        android:onClick="saveMileage"
+        android:text="@string/save" />
+
+</LinearLayout>

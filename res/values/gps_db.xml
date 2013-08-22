@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_table_location">         
+        CREATE TABLE IF NOT EXISTS BB_LOCATION (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	ACCURACY NUMIRIC, 
+        	ALTITUDE NUMERIC,
+        	BEARING NUMERIC,
+        	LAT NUMRRIC,
+        	LNG NUMERIC,
+        	PROVIDER TEXT,
+        	SPEED NUMEIRC,
+        	LOCATION_TIME NUMERIC,
+        	ADDRESS TEXT)
+	</string>
+	<string name="sql_insert_location">        
+	    INSERT INTO BB_LOCATION (LAT,LNG, ACCURACY, PROVIDER, LOCATION_TIME, ADDRESS) VALUES (?,?,?,?,?,?)	</string>
+	<string name="sql_select_location">
+	    SELECT * FROM BB_LOCATION ORDER BY ROW_ID
+	</string>
+	
+	<string name="sql_delete_location">         
+        delete FROM BB_LOCATION WHERE ROW_ID= ? 
+	</string>
+	
+	<string name="drop_table_location">         
+        DROP TABLE IF EXISTS BB_LOCATION 
+	</string>	
+</resources>

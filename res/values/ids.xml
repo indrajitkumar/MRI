@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="gps" type="id"/>
+    <item name="nw" type="id"/>
+    <item name="pickups_button" type="id"/>
+
+</resources>

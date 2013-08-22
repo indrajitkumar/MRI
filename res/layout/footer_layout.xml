@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/FooterBar" >
+
+    <TextView
+        android:id="@+id/address"
+        style="@style/footerText"
+        android:layout_width="match_parent"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/copyright"
+            style="@style/footerText"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/copyright" />
+
+        <TextView
+            android:id="@+id/version"
+            style="@style/footerText"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:paddingRight="10dip" />
+
+        <TextView
+            android:id="@+id/queue"
+            style="@style/footerText"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

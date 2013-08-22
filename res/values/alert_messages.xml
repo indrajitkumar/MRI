@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="alert_invalid_pin">INVALID %1$s PIN, PLEASE TRY AGAIN.</string>
+    <string name="alert_upd_qty_msg">Please enter available qty for all items before validate.</string>
+    <string name="alert_cnf_qty_msg">AVL QTY SHOULD BE SAME AS QTY REC FOR ALL ITEMS.</string>
+    <string name="alert_ord_partial_fill">PARTIAL RECEVING OF ORDERS NOT ALLOWED.</string>
+    
+    <string name="alert_qty_mismatch_reason">SELECT REASON FOR QTY MISMATCH.</string>
+    <string name="alert_mr_item_warn">%1$s OF %2$s ITEMS HAVE WARNINGS.</string>
+    <string name="alert_invalid_qty">INVALID QUANTITY !\nENTER VALUE B/W %1$s AND %2$s.</string>
+    <string name="alert_invalid_qty1">INVALID QUANTITY !\nENTER VALUE %1$d OR %2$d.</string>
+    <string name="alert_validate">Now Please Validate</string>
+    
+    <string name="msg_mr_validated_with_warn">MERCHANT VALIDATED WITH WARNINGS.\nPLEASE CHECK.</string>
+    <string name="msg_mr_validated">MERCHANT VALIDATED.</string>
+    <string name="msg_mr_closed">MERCHANT CLOSED.</string>
+    <string name="msg_mr_rec_summary">%1$s OF %2$s ITEMS RECEIVED</string>
+    <string name="msg_mr_cnf">MERCHANT CONFIRMED.</string>
+    <string name="msg_total_qty">TOTAL QTY RECEIVED IS %1$s.</string>
+    <string name="prompt_skip_items">REASON TO SKIP ITEMS ?</string>
+    
+    <string name="prompt_mr_cnf">Summary : %1$s/%2$s \nCONFIRM MERCHANT ?</string>
+    <string name="prompt_mr_close">Summary : %1$s/%2$s \nCLOSE MERCHANT ?</string>
+    <string name="prompt_mr_validate">Summary : %1$s/%2$s \nVALIDATE MERCHANT ?</string>
+    <string name="msg_manifest_loaded">MANIFEST %1$s LOADED WITH %2$s MERCHANT(S) </string>
+</resources>

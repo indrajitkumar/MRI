@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pin_types">
+        <item>Merchant</item>
+        <item>Pickup Boy</item>
+    </string-array>
+    <string-array name="notification_times">
+        <item>@string/notification_time</item>
+        <item>5 Minutes</item>
+        <item>10 Minutes</item>
+        <item>30 Minutes</item>
+        <item>1 Hour</item>
+    </string-array>
+    
+</resources>

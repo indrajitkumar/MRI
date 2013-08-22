@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alert_inset"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/DetailTextImp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/label_summary" />
+
+        <TextView
+            android:id="@+id/mr_summary"
+            style="@style/DetailTextImp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/spn_pin_typ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/pin_types"
+            android:prompt="@string/label_pin_typ" />
+
+        <EditText
+            android:id="@+id/input"
+            style="@style/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/enter_pin"
+            android:inputType="number"
+            android:password="true"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <!--
+    <RadioGroup
+        android:id="@+id/option_pin_typ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_merchant_pin"
+            style="@style/radio"
+            android:checked="true"
+            android:text="@string/option_merchant" />
+
+        <RadioButton
+            android:id="@+id/radio_pb_pin"
+            style="@style/radio"
+            android:text="@string/option_pickup_boy" />
+    </RadioGroup>
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/goButton"
+            style="@style/submit_button"
+            android:background="@drawable/btn_default"
+            android:text="@string/label_close" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/submit_button"
+            android:background="@drawable/btn_default"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
+</LinearLayout>

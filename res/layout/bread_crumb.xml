@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/HeaderBar"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/home_icon"
+        style="@style/actionItem"
+        android:contentDescription="@string/app_name"
+        android:onClick="onHome"
+        android:src="@drawable/ic_home" />
+
+    <TextView
+        android:id="@+id/bc_merchant"
+        style="@style/headerTitle"
+        android:layout_width="wrap_content"
+        android:background="@drawable/bg_breadcrumb"
+        android:clickable="true"
+        android:gravity="left|center_vertical"
+        android:text="@string/copyright" />
+
+    <TextView
+        android:id="@+id/bc_order"
+        style="@style/headerTitle"
+        android:background="@drawable/bg_breadcrumb"
+        android:clickable="true"
+        android:gravity="right|center_vertical" />
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/HeaderBar" >
+
+    <ImageView
+        android:id="@+id/home_icon"
+        style="@style/actionItem"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo_small" />
+
+    <TextView
+        android:id="@+id/header_title"
+        style="@style/headerTitle"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:text="@string/header_title" />
+
+    <com.brainbox.core.widget.StateButton
+        android:id="@+id/nw"
+        style="@style/actionItem"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:layout_weight="0"
+        android:background="@drawable/wifi_button" />
+
+</LinearLayout>

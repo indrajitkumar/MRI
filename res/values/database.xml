@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+ 
+    <string name="create_config_table">         
+        CREATE TABLE IF NOT EXISTS BRAINBOX_CONFIG (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	KEY TEXT UNIQUE, 
+        	VALUE TEXT)
+	</string>
+	
+    <string name="create_event_log_table">         
+        CREATE TABLE IF NOT EXISTS EVENT_LOG (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	EVENT_NAME TEXT, 
+        	ACTION TEXT,
+        	EVENT_DATE NUMBER,
+        	SYNC_STATUS TEXT
+        	)
+	</string>
+	
+    <string name="create_seq_table">         
+        CREATE TABLE IF NOT EXISTS MOBIFLY_SEQUENCES (
+        	SEQ_NAME TEXT UNIQUE PRIMARY KEY, 
+        	VALUE INTEGER)
+	</string>
+    
+	<string name="insert_value">        
+	    INSERT OR REPLACE  INTO BRAINBOX_CONFIG (KEY,VALUE) VALUES (?,?)	</string>
+	
+	<string name="select_value">
+	    SELECT VALUE FROM BRAINBOX_CONFIG WHERE KEY = ?
+	</string>
+	
+	<string name="get_sequence">
+	    SELECT VALUE FROM MOBIFLY_SEQUENCES WHERE SEQ_NAME = ?
+	</string>
+	<string name="update_sequence">
+	    INSERT OR REPLACE INTO MOBIFLY_SEQUENCES (SEQ_NAME, VALUE) VALUES (?,?)
+	</string>
+	
+	<string name="delete_config_table">         
+        delete FROM BRAINBOX_CONFIG 
+	</string>
+	
+	<string name="drop_config_table">         
+        DROP TABLE IF EXISTS BRAINBOX_CONFIG 
+	</string>
+	
+	<string name="drop_sequence_table">         
+        DROP TABLE IF EXISTS MOBIFLY_SEQUENCES 
+	</string>
+	
+</resources>

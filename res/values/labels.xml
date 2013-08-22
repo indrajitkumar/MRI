@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="label_yes">YES</string>
+    <string name="label_no">NO</string>
+    <string name="label_ok">OK</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_close">Close</string>
+
+    <!-- For MilkRun -->
+    <string name="header_merchant_listing">Merchants[%1$s]</string>
+    <string name="header_order_listing"> %1$s Orders [%2$s]</string>
+    <string name="header_item_listing">%1$s [%2$s]</string>
+    <string name="button_submit">submit</string>
+    <string name="submit">Submit</string>
+    <string name="refresh">Download MilkRun</string>
+    <string name="browse">View MilkRun</string>
+    <string name="enter_quantity">Available Qty</string>
+    <string name="confirm">Confirm</string>
+    <string name="update">Validate</string>
+    <string name="update_qty">Update Available Quantity</string>
+    <string name="close">Close MilkRun</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="label_pin_typ">PIN Type</string>
+    <string name="skip_merchant">Skip Merchant</string>
+    <string name="close_po">Close MilkRun</string>
+    <string name="search">Search</string>
+    <string name="logout">MilkRun Complete</string>
+    <string name="save">Save</string>
+    <string name="label_error">ERROR</string>
+    <string name="enter_item_name">Enter Item Name</string>
+    <string name="warnings">WARNINGS</string>
+    <string name="option_merchant">Merchant</string>
+    <string name="option_pickup_boy">Pickup Boy</string>
+    <string name="qty_mismatch_reason_dd_label">Reason for mismatch</string>
+    <string name="skip_item_reason">Reason to skip item(s)</string>
+    <string name="skip_merchant_reason">Reason to skip merchant</string>
+    <string name="empty_merchant">NO MERCHANT AVAILABLE</string>
+    <string name="empty_warning">NO WARNING</string>
+
+</resources>

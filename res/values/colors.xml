@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="actionbar_separator">#11F</color>
+    <color name="actionbar_title">#FFFFFF</color>
+    <color name="text">#000</color>
+    <color name="text_error">#f00</color>
+    <color name="title">#FFFFFF</color>
+    <color name="disabled_button">#AAA</color>
+     <color name="button_pressed">#fb1</color>
+    <color name="actionbar_background_start">#00B8F5</color>
+    <color name="actionbar_background_end">#2626CD</color>
+    <color name="actionbar_background_item_pressed_start">#FF7F00</color>
+    <color name="actionbar_background_item_pressed_end">#003DF5</color>
+    <color name="screen_title">#FFF</color>
+    <color name="button_text">#FFF</color>
+    <color name="button_text_shaddow">#000</color>
+    <color name="i_button_text">#000</color>
+    <color name="i_button_text_shaddow">#FFF</color>
+    <color name="dashboard_button_text">#ff29549f</color>
+    <color name="screen_title_bg_start">#5F6273</color>
+    <color name="screen_title_bg_end">#5F62FF</color>
+        <drawable name="red">#7f00</drawable>
+    <color name="transparent">#00000000</color>
+    <color name="dark_gray">#777</color>
+
+    <color name="bg_footer">#5F62FF</color>
+    <color name="bg_box">#EEF</color>
+    <color name="bg_dashboard">#f8f9fe</color>
+    
+    
+    
+
+</resources>

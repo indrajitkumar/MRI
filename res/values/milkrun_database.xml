@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="database_name">mobifly-milkrun-db</string>
+     <integer name="database_version">7</integer>
+     
+     <!-- Reasons -->
+     <string name="create_reason_table_query">
+        CREATE TABLE IF NOT EXISTS MILKRUN_REASONS (
+        	ROWID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	REASON_CODE TEXT UNIQUE, 
+        	REASON_TEXT TEXT, 
+        	ADDITIONAL_REQUIRED INTEGER
+        )
+    </string>
+    <string name="insert_reason_query">
+        INSERT OR REPLACE INTO MILKRUN_REASONS (REASON_CODE, REASON_TEXT, ADDITIONAL_REQUIRED) values (?,?,?)
+    </string>
+    <string name="select_reasons_query">
+        SELECT  * FROM MILKRUN_REASONS  ORDER BY REASON_CODE
+    </string>
+    <string name="SQL_SELECT_REASON_BY_CODE">
+        SELECT  * FROM MILKRUN_REASONS  WHERE REASON_CODE = ?
+    </string>
+    <string name="delete_reasons_query">
+        DELETE FROM MILKRUN_REASONS
+    </string>
+    <string name="query_drop_table_reasons">
+        DROP TABLE IF EXISTS MILKRUN_REASONS
+    </string>
+    
+    <string name="create_merchant_table">         
+        CREATE TABLE IF NOT EXISTS MILKRUN_MERCHANT (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	MERCHANT_ID TEXT UNIQUE, 
+        	MANIFEST_ID TEXT , 
+        	MERCHANT_NAME TEXT, 
+        	CONTACT_PERSON TEXT, 
+        	CONTACT_NUMBER TEXT,
+        	ADDRESS_LINE1 TEXT,
+        	ADDRESS_LINE2 TEXT,
+        	CITY TEXT,
+        	STATE TEXT,
+        	PIN TEXT,
+        	PO_STATUS TEXT)
+	</string>
+	
+    <string name="create_merchant_table_new">         
+        CREATE TABLE IF NOT EXISTS MILKRUN_MERCHANT (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	MERCHANT_ID TEXT UNIQUE, 
+        	MANIFEST_ID TEXT, 
+        	BLOB_DATA TEXT,
+        	IN_SYNC TEXT)
+	</string>
+	
+    <string name="create_order_table">         
+        CREATE TABLE IF NOT EXISTS MILKRUN_ORDER (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	ORDER_ID TEXT UNIQUE, 
+        	MERCHANT_ID TEXT , 
+        	ORDER_DT TEXT,
+        	CUSTOMER_NAME TEXT,
+        	STATUS TEXT)
+	</string>
+	
+	 <string name="create_item_table">         
+        CREATE TABLE IF NOT EXISTS MILKRUN_ITEM (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	ITEM_ID	TEXT UNIQUE, 
+			ORDER_ID	TEXT, 
+			MERCHANT_ID	TEXT, 
+			PRODUCT_NAME	TEXT, 
+			QTY_EXP INTEGER,
+			QTY_REC	INTEGER,
+			COMMENT TEXT,
+			WARNING TEXT,
+			STATUS	TEXT)
+	</string>
+	
+	 <string name="create_mapping_table">         
+        CREATE TABLE IF NOT EXISTS MILKRUN_ORDER_ITEM (
+        	ROW_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        	ITEM_ID TEXT,
+        	ORDER_ID TEXT, 
+        	SUB_ORDER_ID TEXT, 
+        	MERCHANT_ID TEXT,
+        	QTY_EXP NUMBER,
+        	QTY_REC NUMBER,
+        	COMMENT TEXT,
+        	WARNING TEXT,
+        	STATUS TEXT)
+	</string>
+
+
+	 <string name="insert_merchant">        
+        INSERT OR REPLACE INTO MILKRUN_MERCHANT 
+        	(MERCHANT_ID , MANIFEST_ID,
+        		MERCHANT_NAME , 
+        		CONTACT_PERSON ,	
+        		CONTACT_NUMBER ,
+        		ADDRESS_LINE1 ,
+        		ADDRESS_LINE2 ,
+        		CITY,
+        		STATE,
+        		PIN,
+        		PO_STATUS)
+       VALUES (?,?,?,?,?,?,?,?,?,?,?)	</string>
+    <!-- Insert Order Query -->
+    <string name='insert_order'>
+        INSERT OR REPLACE  INTO MILKRUN_ORDER 
+        	(ORDER_ID,ORDER_DT, CUSTOMER_NAME,STATUS,MERCHANT_ID)
+       	VALUES (?,?,?,?,?)
+    </string>
+    <!-- Insert Item Query -->
+    <string name="insert_item">        
+        INSERT OR REPLACE  INTO MILKRUN_ITEM
+        (ITEM_ID, PRODUCT_NAME, QTY_REC, WARNING, STATUS,COMMENT)
+       	VALUES (?,?,?,?,?,?)	</string>
+	<string name="select_item_by_id">        
+        SELECT * FROM MILKRUN_ITEM WHERE ITEM_ID = ?
+	</string>
+	
+    <!-- Insert Mapping Query -->
+    <string name="insert_mapping">        
+        INSERT OR REPLACE  INTO MILKRUN_ORDER_ITEM
+        (ITEM_ID, ORDER_ID, SUB_ORDER_ID, MERCHANT_ID, QTY_EXP, QTY_REC, WARNING, STATUS,COMMENT )
+       	VALUES (?,?,?,?,?,?,?,?,?)
+	</string>
+    
+    <!-- QUERY to get all merchants in DB -->
+	<string name="select_all_merchants">
+	    SELECT M.MERCHANT_ID, M.MERCHANT_NAME, M.MANIFEST_ID,
+	    	M.CONTACT_NUMBER, M.CONTACT_PERSON, M.ADDRESS_LINE1, M.ADDRESS_LINE2 ,
+	    	CITY,STATE,PIN ,PO_STATUS, SUM(OI.QTY_EXP) QTY_EXP ,SUM(OI.QTY_REC) QTY_REC 
+	    FROM MILKRUN_MERCHANT M, MILKRUN_ORDER_ITEM OI  
+	    WHERE M.MERCHANT_ID = OI.MERCHANT_ID
+	    GROUP BY M.MERCHANT_NAME, M.CONTACT_NUMBER, M.ADDRESS_LINE1, M.ADDRESS_LINE2, M.MERCHANT_ID,PO_STATUS,CITY,STATE,PIN,M.CONTACT_PERSON
+	    ORDER BY QTY_EXP DESC, MERCHANT_NAME	</string>
+	
+	<!-- Select orders for a merchant -->
+	<string name="select_orders">
+	    SELECT DISTINCT MO.* FROM MILKRUN_ORDER MO  
+	    	WHERE MERCHANT_ID = ? 
+	    	ORDER BY ORDER_DT
+	</string>
+	
+	<string name="select_order_by_id">
+	    SELECT * FROM MILKRUN_ORDER WHERE ORDER_ID = ? 
+	</string>
+	
+	<string name="sql_update_order_status">
+	    UPDATE MILKRUN_ORDER SET STATUS = ?
+	    	WHERE ORDER_ID = ? 
+	    	
+	</string>
+	
+	<!-- Select Items in an Order -->
+	<string name="select_items_by_order">
+	    SELECT MI.ITEM_ID, 
+	    	OM.ORDER_ID , 
+	    	OM.MERCHANT_ID , 
+	    	MI.PRODUCT_NAME, 
+	    	OM.QTY_EXP, 
+	    	OM.QTY_REC , 
+	    	OM.COMMENT, 
+	    	OM.STATUS,
+	    	OM.WARNING
+	    FROM MILKRUN_ITEM MI, MILKRUN_ORDER_ITEM OM 
+	    WHERE MI.ITEM_ID = OM.ITEM_ID
+	    AND OM.ORDER_ID = ?
+		ORDER BY OM.ORDER_ID
+	</string>
+	
+	<!-- Selects Items for a Merchant -->
+	<string name="select_items_by_merchant">
+	   SELECT
+	   	MI.ITEM_ID, 
+	   	MI.PRODUCT_NAME, 
+	   	SUM(OM.QTY_EXP) QTY_EXP , 
+	   	MI.QTY_REC, 
+	   	MI.COMMENT, 
+	   	MI.STATUS,
+	   	OM.WARNING,
+	   	(SELECT MIN(MOI.ORDER_ID) FROM MILKRUN_ORDER_ITEM MOI WHERE MOI.ITEM_ID = MI.ITEM_ID) ORDER_ID
+	   FROM MILKRUN_ITEM MI, MILKRUN_ORDER_ITEM OM , MILKRUN_ORDER O
+	   WHERE MI.ITEM_ID = OM.ITEM_ID
+	   	AND O.ORDER_ID = OM.ORDER_ID
+	   	AND O.OM.MERCHANT_ID = OM.OM.MERCHANT_ID
+	    AND OM.MERCHANT_ID=?
+	   GROUP BY MI.PRODUCT_NAME, MI.QTY_REC, MI.STATUS,MI.ITEM_ID, ORDER_ID
+	   ORDER BY  ORDER_ID
+	</string>
+	
+	<!-- Selects Items for a Merchant -->
+	<string name="select_item_warnings">
+	   SELECT  DISTINCT
+	   	MI.ITEM_ID, 
+	   	MI.PRODUCT_NAME, 
+	   	OM.WARNING
+	   FROM MILKRUN_ITEM MI, MILKRUN_ORDER_ITEM OM 
+	   WHERE MI.ITEM_ID = OM.ITEM_ID
+	    AND OM.MERCHANT_ID=?
+	    AND OM.WARNING!=\'\'
+	   ORDER BY MI.ITEM_ID
+	</string>
+	
+	
+	<string name="sql_update_item">
+	   UPDATE MILKRUN_ITEM  SET QTY_REC = ?, COMMENT=?, STATUS= ? WHERE ITEM_ID=?
+	</string>
+	<string name="sql_update_order_item">
+	   UPDATE MILKRUN_ORDER_ITEM  SET QTY_REC = ?, COMMENT=?, STATUS= ? WHERE ITEM_ID=? AND ORDER_ID = ?
+	</string>
+	<string name="delete_merchant">
+	   DELETE FROM MILKRUN_MERCHANT WHERE MERCHANT_ID =?
+	</string>
+	<string name="delete_merchant_order">
+	   DELETE FROM  MILKRUN_ORDER WHERE MERCHANT_ID =?
+	</string>
+	<string name="delete_merchant_item">
+	   DELETE  FROM MILKRUN_ITEM WHERE MERCHANT_ID =?
+	</string>
+	<string name="delete_merchant_mapping">
+	   DELETE  FROM MILKRUN_ORDER_ITEM WHERE MERCHANT_ID =?
+	</string>
+	
+
+	<!-- Stubbed query for REC Quantity -->
+	<string name="sql_update_qtyRec">
+	   UPDATE MILKRUN_ITEM SET QTY_REC =  (SELECT SUM(QTY_REC) QTY_REC_TOTAL FROM MILKRUN_ORDER_ITEM where ITEM_ID = ? ) WHERE ITEM_ID = ?
+	</string>
+	
+	<!-- Drop Tables -->
+	
+	<string name="sql_update_PO">
+	   UPDATE MILKRUN_MERCHANT  SET PO_STATUS = ? WHERE MERCHANT_ID= ?
+	</string>
+	
+	<string name="drop_merchant_table">         
+        DROP TABLE IF EXISTS MILKRUN_MERCHANT 
+	</string>
+	<string name="drop_order_table">         
+        DROP TABLE IF EXISTS MILKRUN_ORDER
+	</string>
+	<string name="drop_item_table">         
+        DROP TABLE IF EXISTS MILKRUN_ITEM
+	</string>
+	<string name="drop_mapping_table">         
+        DROP TABLE IF EXISTS MILKRUN_ORDER_ITEM
+	</string>
+</resources>

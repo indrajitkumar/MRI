@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="server_url">http://180.179.49.217/tools/mobile_mri.php</string>
+    <string name="appVersion">1.16(Test)</string>
+    <string name="acra_name">shopclue</string>
+    <string name="copyright">©2013 Clues Network Pvt Ltd</string>
+
+    <integer name="log_level">0</integer>
+    <integer name="conn_timeout">60000</integer>
+
+    <bool name="login_enabled">true</bool>
+
+    <string name="formKey">dGl5bFBpekJmXzdoWmhTTDRfTUZWX1E6MQ</string>
+
+    <integer name="gps_poll">60</integer>
+    <integer name="gps_min_dist">100</integer>
+    <integer name="nw_poll">60</integer>
+    <integer name="nw_min_dist">0</integer>
+
+    <bool name="location_log">false</bool>
+
+    <integer name="timer_poll">60</integer>
+
+    <string name="location_api">http://cabbee.in/api/</string>
+
+</resources>

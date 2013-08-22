@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="notification_icon">#FB1</drawable>
+    <drawable name="banner">#fb1</drawable>
+    <drawable name="logo_small">@drawable/ic_logo</drawable>
+    <drawable name="img_splash">@drawable/mobifly_splash</drawable>
+</resources>

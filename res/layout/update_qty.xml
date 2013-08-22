@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/upd_qty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alert_inset"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/input"
+        style="@style/editText"
+        android:ems="4"
+        android:hint="@string/enter_quantity"
+        android:inputType="number"
+        android:maxEms="4"
+        android:selectAllOnFocus="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <Spinner
+        android:id="@+id/spinner_reasons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/app_name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/goButton"
+            style="@style/submit_button"
+            android:background="@drawable/btn_default"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/submit_button"
+            android:background="@drawable/btn_default"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
+</LinearLayout>

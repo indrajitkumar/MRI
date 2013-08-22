@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_item_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:padding="4dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/merchant_name"
+            style="@style/list_item"
+            android:layout_weight="1"
+            android:singleLine="false" />
+
+        <TextView
+            android:id="@+id/qty"
+            style="@style/list_item"
+            android:layout_width="wrap_content"
+            android:layout_weight="0"
+            android:gravity="left"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/merchant_phone"
+            style="@style/list_item"
+            android:layout_weight="0"
+            android:background="@drawable/bg_phone"
+            android:clickable="true"
+            android:drawableLeft="@android:drawable/sym_action_call"
+            android:gravity="center_vertical"
+            android:padding="0dp"
+            android:visibility="gone" >
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/merchant_address"
+        style="@style/list_item"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:singleLine="false"
+        android:visibility="gone" />
+
+</LinearLayout>

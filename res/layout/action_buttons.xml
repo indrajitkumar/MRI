@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btn_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/back_btn"
+        style="@style/ButtonSmall"
+        android:background="@drawable/btn_default"
+        android:onClick="back"
+        android:text="@string/back" />
+
+    <Button
+        android:id="@+id/btn_skip_merchant"
+        style="@style/ButtonSmall"
+        android:onClick="skipMerchant"
+        android:background="@drawable/btn_red"
+        android:text="@string/skip_merchant" />
+    
+    <Button
+        android:id="@+id/upd_btn"
+        style="@style/ButtonSmall"
+        android:background="@drawable/btn_blue"
+        android:visibility="gone" 
+        android:onClick="updateServer"
+        android:text="@string/update" />
+
+    <Button
+        android:id="@+id/cnf_btn"
+        style="@style/ButtonSmall"
+        android:background="@drawable/btn_brown"
+        android:onClick="confirm"
+        android:text="@string/confirm"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/close_btn"
+        style="@style/ButtonSmall"
+        android:background="@drawable/btn_green"
+        android:onClick="closePO"
+        android:text="@string/close"
+        android:visibility="gone" />
+
+</LinearLayout>
